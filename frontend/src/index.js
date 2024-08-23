@@ -1,13 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {RouterProvider} from "react-router-dom";
+import router from './router';
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <App />,
+//     errorElement: <h1>No such route is available...</h1>,
+//     children: [
+//       {
+//         path: "/",
+//         element: <Hero />
+//       },
+//       {
+//         path: "/books",
+//         element: <Books />
+//       }
+//     ]
+//   }
+// ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
