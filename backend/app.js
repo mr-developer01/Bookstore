@@ -1,11 +1,15 @@
 const express = require("express");
-const app = express()
+const app = express();
+// Db connection
+const connectDb = require("./config/mongoose-connection");
+connectDb();
+// importing routes
+const bookRoute = require("./routes/book-route");
 
-const connectDb = require("./config/mongoose-connection")
-connectDb()
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-    res.send("Working...")
-})
+// All API's
+app.use("/api/v1", bookRoute);
 
-app.listen(3000)
+app.listen(3000);
