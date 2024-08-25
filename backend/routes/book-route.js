@@ -56,11 +56,11 @@ router.put("/updateBook/:id", async (req, res) => {
   }
 });
 
-// Update a book by its ID
+// Delete a book by its ID
 router.delete("/deleteBook/:id", async (req, res) => {
   try {
     const book = await bookModel.findByIdAndDelete({ _id: req.params.id });
-    res.status(200).json({ book });
+    res.status(200).json({ message: "Book deleted" });
   } catch (error) {
     console.log(error);
   }

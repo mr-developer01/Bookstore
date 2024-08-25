@@ -3,6 +3,8 @@ import Hero from "./Components/Hero";
 import Books from "./Components/Books";
 import App from "./App";
 import Addbooks from "./Components/Addbooks";
+import Aboutbook from "./Components/Aboutbook";
+import Updatebook from "./Components/Updatebook";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
         {
           path: "/addbooks",
           element: <Addbooks />
+        },
+        {
+          path: "/book/:id",
+          element: <Aboutbook />
+        },
+        {
+          path: "/edit/:id",
+          element: <Updatebook />
         }
       ]
     }

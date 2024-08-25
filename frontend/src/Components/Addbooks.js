@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 
 const Addbooks = () => {
   const [bookname, setBookname] = useState("");
@@ -29,7 +28,7 @@ const Addbooks = () => {
   };
 
   return (
-    <div className="px-28 w-full h-[91.5vh] py-[5vh] text-white bg-red-400 flex items-center justify-center">
+    <div className="px-28 w-full h-[91.5vh] py-[5vh] text-white bg-[#D9C0A2] flex items-center justify-center">
       <form
         onSubmit={addBook}
         className="w-[60%] border-[2px] rounded-md px-[4vw] py-[2vh] flex flex-col gap-[1.5vh] border-white "
@@ -55,15 +54,14 @@ const Addbooks = () => {
           className="py-[1.5vh] px-[2vw] text-[1vw] outline-none border-[2px] rounded-md bg-transparent border-[#A3A49E] placeholder:text-[1vw] "
         />
         <label htmlFor="description">Description</label>
-        <input
-          type="text"
-          id="description"
-          placeholder="Enter Book's Description"
+        <textarea
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          className="py-[1.5vh] px-[2vw] text-[1vw] outline-none border-[2px] rounded-md bg-transparent border-[#A3A49E] placeholder:text-[1vw] "
-        />
+          id="description"
+          placeholder="Enter Book's Description"
+          className="py-[1.5vh] px-[2vw] text-[1vw] outline-none border-[2px] rounded-md bg-transparent border-[#A3A49E] placeholder:text-[1vw] resize-none "
+        ></textarea>
         <label htmlFor="image">Image</label>
         <input
           type="text"
